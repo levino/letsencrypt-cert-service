@@ -9,4 +9,8 @@ RUN mkdir -p /var/lock/apache2 /var/run/apache2
 COPY supervisord.conf /etc
 COPY create-cert.sh /opt/letsencrypt
 EXPOSE 80
+
+ENV CERT_DOMAIN www.example.com
+ENV CERT_EMAIL user@example.com
+
 ENTRYPOINT supervisord
