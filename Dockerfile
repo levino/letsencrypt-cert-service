@@ -12,6 +12,6 @@ EXPOSE 80
 
 ENV CERT_DOMAIN www.example.com
 ENV CERT_EMAIL user@example.com
-ENV VIRTUAL_HOST *.acme.invalid
+ENV VIRTUAL_HOST *.acme.invalid,*/.well-known/*
 
 ENTRYPOINT supervisord
