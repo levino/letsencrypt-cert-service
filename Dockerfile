@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y \
    && rm -rf /var/lib/apt/lists/*
 RUN pip install supervisor
 RUN mkdir -p /var/lock/apache2 /var/run/apache2
-COPY supervisord.conf /etc
-COPY create-cert.sh /opt/letsencrypt
+COPY supervisord.conf /etc/supervisord.conf
+COPY create-cert.sh /opt/letsencrypt/create-cert.sh
 EXPOSE 80
 
 ENV CERT_DOMAIN www.example.com
