@@ -20,7 +20,7 @@ These are as follows:
 
 |Variable|Explanation|Example value|
 | --- | --- | --- | --- |
-|CERT_DOMAIN|Domain the certificate should be issued for | ```example.com```|
+|CERT_DOMAINS|Domains the certificate should be issued for, comma separated | ```example.com,app.example.com```|
 |CERT_EMAIL|Email for notifications (like imminent certificate expiry)|```admin@example.com```|
 |VIRTUAL_HOST|optional for Tutum + HAProxy setup (telling the loadbalancer to route traffic to this service)|```*.acme.invalid,*/.well-known/*```
 
@@ -69,7 +69,7 @@ http://example.com/.well-known (currently an apache 2.4.7 error message)
 
 This service is not done. Planned improvements include:
 
-- Support multiple domains for one cert (should be easy)
+- ~~Support multiple domains for one cert (should be easy)~~ Done.
 - Provide a webinterface for all commands. Needs to be done in a two step approach for security:
   1. Start a webserver on port 80 with a button "create certificate"
   2. On click create a certificate and start a webserver on port 443 with ssl termination
