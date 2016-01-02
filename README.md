@@ -64,7 +64,7 @@ To provide a solution to the above problem, we suggest this service.
 After deploying the service make sure you get an answer from this service when you go to
 http://example.com/.well-known (currently an apache 2.4.7 error message)
 
-## Todos
+## Roadmap
 
 This service is not done. Planned improvements include:
 
