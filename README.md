@@ -68,6 +68,7 @@ http://example.com/.well-known (currently an apache 2.4.7 error message)
 
 This service is not done. Planned improvements include:
 
+- Support multiple domains for one cert (should be easy)
 - Provide a webinterface for all commands. Needs to be done in a two step approach for security:
   1. Start a webserver on port 80 with a button "create certificate"
   2. On click create a certificate and start a webserver on port 443 with ssl termination
