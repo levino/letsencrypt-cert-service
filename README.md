@@ -51,7 +51,7 @@ means that you can either "inject" it into your one instance apache oder nginx s
 your live deployment, start a new webserver, get the certificates on port 80 and then start your deployment
 again. It goes without saying that this cannot be a "workflow".
 
-## Intend of this service
+## Intent of this service
 
 To provide a solution to the above problem, we suggest this service.
 
