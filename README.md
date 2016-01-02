@@ -20,7 +20,7 @@ These are as follows:
 |Variable|Explanation|Example value|
 | --- | --- | --- | --- |
 |CERT_DOMAIN|Domain the certificate should be issued for | ```example.com```|
-|CERT_DOMAIN|Email for notifications (like imminent certificate expiry)|```admin@example.com```|
+|CERT_EMAIL|Email for notifications (like imminent certificate expiry)|```admin@example.com```|
 |VIRTUAL_HOST|optional for Tutum + HAProxy setup (telling the loadbalancer to route traffic to this service)|```*.acme.invalid,*/.well-known/*```
 
 Usually you would want the newly generated certificates to be stored in the hosts file system
