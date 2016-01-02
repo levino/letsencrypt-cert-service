@@ -10,7 +10,7 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY create-cert.sh /opt/letsencrypt/create-cert.sh
 EXPOSE 80
 
-ENV CERT_DOMAIN www.example.com
+ENV CERT_DOMAINS www.example.com
 ENV CERT_EMAIL user@example.com
 ENV VIRTUAL_HOST *.acme.invalid,*/.well-known/*
 
