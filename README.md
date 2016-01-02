@@ -6,8 +6,7 @@ A service to automatically create and renew letsencrypt certificates.
 ## Description
 
 This service can be run on a webserver to obtain letsencrypt certificates. 
-It can be run on the server that the A record of the domain points to, but
-it the major benefit of this service is, that it can be run in a professional setup
+It can be run on the server that the A record of the domain points to, but the major benefit of this service is, that it can be run in a professional setup
 with loadbalancers and in this scenario be deployed on any node behind the loadbalancer without
 interrupting the live deployment.
 
