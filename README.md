@@ -40,7 +40,7 @@ We describe the usage for a domain ```example.com```.
 - scp the certificates from the server with something like:
    ```scp -r root@hostnode.whatever:/var/lib/docker/letsencryptcerts .```
 
-Certificates for ```example.com``` will be available in the container at ```etc/letsencrypt```
+Certificates for ```example.com``` will be available in the container at ```/etc/letsencrypt```
 
 ## Background
 
