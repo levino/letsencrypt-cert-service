@@ -37,7 +37,7 @@ We describe the usage for a domain ```example.com```.
 
    ```docker exec -i -t loving_heisenberg bash```  
    
-- execute ```create-cert.sh```
+- Create certificate with ```./create-cert.sh```
 - scp the certificates from the server with something like:
    ```scp -r root@hostnode.whatever:/var/lib/docker/letsencryptcerts .```
 
