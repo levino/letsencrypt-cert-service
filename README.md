@@ -32,10 +32,11 @@ Usually you would want the newly generated certificates to be stored in the host
 We describe the usage for a domain ```example.com```.
 
 - Deploy the service on a node (set the environment variables, see below) and link the certificate volumes to the hosts file system
-- Make sure that all http traffic to ```example.com/.well-known``` goes to the letsencrypt cert service   
-- Attach to the running container and start a bash:  
-
-   ```docker exec -i -t loving_heisenberg bash```  
+- Make sure that all http traffic to ```example.com/.well-known/``` goes to the letsencrypt cert service   
+- Attach to the running container with a bash. You can do so by:  
+   - ssh into the host
+   - run ```docker ps -a``` and find the name of the container (e.g. "loving_heisenberg")
+   - run ```docker exec -i -t loving_heisenberg bash```
    
 - Create certificate with ```./create-cert.sh```
 - scp the certificates from the server with something like:
@@ -63,7 +64,7 @@ To provide a solution to the above problem, we suggest this service.
 ## Troubleshooting
 
 After deploying the service make sure you get an answer from this service when you go to
-http://example.com/.well-known (currently an apache 2.4.7 error message)
+http://example.com/.well-known/ (currently an apache 2.4.7 error message)
 
 ## Roadmap
 
