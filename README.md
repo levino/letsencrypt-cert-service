@@ -48,7 +48,7 @@ Certificates for ```example.com``` will be available in the container at ```/etc
 
 The problem with the default letsencrypt tool is that it expects to be run on port 80 on the root domain.
 Or at least the server where all http traffic to the domain ```example.com``` ends up. This
-means that you can either "inject" it into your one instance apache oder nginx server. If you have another setup
+means that you can either "inject" it into your one instance apache or nginx server. If you have another setup
  which involves for example some node http servers and path based http routing + loadbalancing you need to take down
 your live deployment, start a new webserver, get the certificates on port 80 and then start your deployment
 again. It goes without saying that this cannot be a "workflow".
