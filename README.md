@@ -39,7 +39,7 @@ We describe the usage for a domain ```example.com```.
    - run ```docker exec -i -t loving_heisenberg bash```
    
 - Create certificate with ```./create-cert.sh```
-- scp the certificates from the server with something like:
+- scp the certificates from the server to your local machine with something like:
    ```scp -r root@hostnode.whatever:/var/lib/docker/letsencryptcerts .```
 
 Certificates for ```example.com``` will be available in the container at ```/etc/letsencrypt```
