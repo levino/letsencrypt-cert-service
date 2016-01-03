@@ -1,4 +1,4 @@
-FROM quay.io/letsencrypt/letsencrypt
+FROM sheerun/letsencrypt
 
 RUN apt-get update && apt-get install -y \
   apache2 \
