@@ -99,7 +99,7 @@ We describe the usage for a domain ```domain.com```.
 
 - Deploy with appropriate environment variables (see above)
 - Recommended: Open ports 80 and 443 of the container on the host, get a subdomain like "certs.domain.com" and point to the host (or tutums load balancer). Don't forget to add "certs.domain.com" to the list of domains for the certifcate.
-- Link to the cert service from load balancer
+- Link to the cert service from load balancer(s), you can get one cert for up to 100 subdomains which of course could be ending up in different stacks with different load balancers. You can link to this cert service from each of them.
 - Route all traffic for ```http://*/.well-known/*``` to service at port 80
 - Check for all domains whether ```http://domain.com/.well-known/check``` shows the correct success message ("Letsencrypt cert service reporting in! Load balancing seems to work.")
 - Check whether ```http://certs.domain.com/status``` shows success message
