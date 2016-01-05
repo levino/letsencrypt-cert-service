@@ -113,10 +113,10 @@ load balancers that check whether the service is "alive" before routing traffic 
 - Deploy with appropriate environment variables (see above)
 - Recommended: Open ports 80 and 443 of the container on the host, get a subdomain like "certs.domain.com" and point to the host (or tutums load balancer). Don't forget to add "certs.domain.com" to the list of domains for the certifcate.
 - Link to the cert service from load balancer
-- Route all traffic to ```http://\*/.well-known/*``` to service at port 80
-- Check for all domains whether http://domain/.well-known/check shows the correct success message ("Letsencrypt cert service reporting in! Load balancing seems to work.")
+- Route all traffic to ```http://*/.well-known/*``` to service at port 80
+- Check for all domains whether ```http://domain/.well-known/check``` shows the correct success message ("Letsencrypt cert service reporting in! Load balancing seems to work.")
 - Check whether ```http://certs.domain.com/status``` shows success message
-- Go to http://certs.domain.com/makecert (wait, connection might time out, if everything is set up correctly it will still work, check server logs)
+- Go to ```http://certs.domain.com/makecert``` (wait, connection might time out, if everything is set up correctly it will still work, check server logs)
 - On success (and if private service enabled) go to ```https://certs.domain.com/status``` and authenticate (Please check that it is encrypted traffic!)
 - Get your certificate from ```https://certs.domain.com/certs/domain.com/cert.pem```
 - Get your private key from ```https://certs.domain.com/certs/domain.com/privkey.pem```
