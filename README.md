@@ -67,7 +67,8 @@ These are as follows:
 #### Tutum HAProxy specific
 |Variable|Explanation|Example value|
 | --- | --- | --- | --- |
-|VIRTUAL_HOST|optional for Tutum + HAProxy setup (telling the loadbalancer to route traffic to this service)|```*.acme.invalid,*/.well-known/*```
+|VIRTUAL_HOST|Routing all acme queries to the service|```http://*/.well-known/*```
+|EXCLUDE_PORTS|Don't route traffic to port 443|```443```
 
 Usually you would want the newly generated certificates to be stored in the hosts file system
 so make sure to link the container dir ```/etc/letsencrypt``` to the host.
@@ -107,21 +108,30 @@ To provide a solution to the above problem, we suggest this service.
 load balancers that check whether the service is "alive" before routing traffic to it).
 - One can connect to the service at any time and create or renew certificates with a simple command.
 
+## Usage
+
+- Deploy with appropriate environment variables (see above)
+- Recommended: Open ports 80 and 443 of the container on the host, get a subdomain like "certs.domain.com" and point to the host (or tutums load balancer). Don't forget to add "certs.domain.com" to the list of domains for the certifcate.
+- Link to the cert service from load balancer
+- Route all traffic to http://*/.well-known/* to service at port 80
+- Check for all domains whether http://domain/.well-known/check shows the correct success message ("Letsencrypt cert service reporting in! Load balancing seems to work.")
+- Check whether http://certs.domain.com/status shows success message
+- Go to http://certs.domain.com/makecert (wait, connection might time out, if everything is set up correctly it will still work, check server logs)
+- On success (and if private service enabled) go to https://certs.domain.com/status and authenticate (Please check that it is encrypted traffic!)
+- Get your certificate from https://certs.domain.com/certs/domain.com/cert.pem
+- Get your private key from https://certs.domain.com/certs/domain.com/privkey.pem
+- Get you Tutum Haproxy certificate string from https://certs.domain.com/certs/domain.com/bundle.pem?haproxy=true (:D)
+
+Maintenance:
+
+- With private service enabled and certificates in place you can hit https://certs.domain.com/makecert to renew certs. On success you can retrieve the new extended certificate as above.
+
+Important:
+
+- There are no checks on rate limit and so on. Please do not hit /makecert too often.
+
 ### Troubleshooting
 
 After deploying the service make sure you get an answer from this service when you go to
-http://example.com/.well-known/ (currently an apache 2.4.7 error message)
+http://example.com/.well-known/check (currently an apache 2.4.7 error message)
 
-### Roadmap
-
-This service is not done. Planned improvements include:
-
-- ~~Support multiple domains for one cert (should be easy)~~ Done.
-- Provide a webinterface for all commands. Needs to be done in a two step approach for security:
-1. Start a webserver on port 80 with a button "create certificate"
-2. On click create a certificate and start a webserver on port 443 with ssl termination
-3. Require login to https server (e.g. basic auth with a password from ENV)
-4. Provide buttons "renew certificates" and "download certificates" after login (maybe encrypt certs
-before download with a password from ENV)
-- Provide certificates in a "haproxy friendly" .pem format (private key + cert in one file)
-- Automatic update of a tutum stack with a renewed certificate (somewhat delicate)
