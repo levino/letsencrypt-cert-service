@@ -65,6 +65,8 @@ These are as follows:
 |CERT_SERVICE_Username|Username to authenticate against private certificate service|```michael```|
 
 #### Tutum HAProxy specific
+|Variable|Explanation|Example value|
+| --- | --- | --- | --- |
 |VIRTUAL_HOST|optional for Tutum + HAProxy setup (telling the loadbalancer to route traffic to this service)|```*.acme.invalid,*/.well-known/*```
 
 Usually you would want the newly generated certificates to be stored in the hosts file system
