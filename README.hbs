@@ -5,35 +5,7 @@
 A service to automatically create and renew letsencrypt certificates.
 
 ### API Reference
-<a name="module_letsencrypt-cert-service"></a>
-## letsencrypt-cert-service
-**Example**  
-```js
-var CertService = require("letsencrypt-cert-service");
-var certService = new CertService(config);
-certService.start(callback);
-```
-
-* [letsencrypt-cert-service](#module_letsencrypt-cert-service)
-    * [~LetsEncryptCertService](#module_letsencrypt-cert-service..LetsEncryptCertService)
-        * [new LetsEncryptCertService(config)](#new_module_letsencrypt-cert-service..LetsEncryptCertService_new)
-
-<a name="module_letsencrypt-cert-service..LetsEncryptCertService"></a>
-### letsencrypt-cert-service~LetsEncryptCertService
-**Kind**: inner class of <code>[letsencrypt-cert-service](#module_letsencrypt-cert-service)</code>  
-<a name="new_module_letsencrypt-cert-service..LetsEncryptCertService_new"></a>
-#### new LetsEncryptCertService(config)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| config |  |  |
-| config.hostnames | <code>Array.&lt;string&gt;</code> | The hostnames which the certificate is to be created for |
-| config.email | <code>string</code> | Letsencrypt notification email |
-| [config.private] | <code>boolean</code> | Set to true when you want private service to be running |
-| [config.password] | <code>string</code> | Strong password to protect private parts - required when private true |
-| [config.username] | <code>string</code> | Username of choice - required when private true |
-
-
+{{#module name="letsencrypt-cert-service"}}{{>docs}}{{/module}}
 
 ## Docker service
 
