@@ -1,8 +1,13 @@
+## Communication
 
+I opened a Gitter room https://gitter.im/Levino/letsencrypt-cert-service
+
+Bugs go to issues please.
 
 ## Node package
 
 A service to automatically create and renew letsencrypt certificates.
+
 
 ### API Reference
 <a name="module_letsencrypt-cert-service"></a>
