@@ -27,7 +27,7 @@ certService.start(callback);
 | Param | Type | Description |
 | --- | --- | --- |
 | config |  |  |
-| config.hostnames | <code>Array.&lt;string&gt;</code> | The hostnames which the certificate is to be created for |
+| config.domains | <code>Array.&lt;string&gt;</code> | The hostnames which the certificate is to be created for |
 | config.email | <code>string</code> | Letsencrypt notification email |
 | [config.private] | <code>boolean</code> | Set to true when you want private service to be running |
 | [config.password] | <code>string</code> | Strong password to protect private parts - required when private true |
