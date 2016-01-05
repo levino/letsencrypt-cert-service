@@ -5,7 +5,7 @@ VOLUME /var/www/html
 RUN ./install-letsencrypt.sh
 
 # You can use the below command to install some handy tools for dev purposes in the container
-RUN ./setup-dev-tools.sh
+# RUN ./setup-dev-tools.sh
 
 EXPOSE 80
 EXPOSE 443
