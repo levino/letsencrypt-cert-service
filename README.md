@@ -124,3 +124,6 @@ Important:
 After deploying the service make sure you get an answer from this service when you go to
 http://example.com/.well-known/check (currently an apache 2.4.7 error message)
 
+## Copyright
+
+Levin Keller
