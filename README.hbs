@@ -40,7 +40,7 @@ These are as follows:
 |Variable|Explanation|Example value|
 | --- | --- | --- | --- |
 |VIRTUAL_HOST|Routing all acme queries to the service|```http://*/.well-known/*```
-|VIRTUAL_HOST_WEIGHT|Taking over ```domain.com/.well-known/acme...``` queries. You need to set a value that is higher than the "catch all"|```1```
+|VIRTUAL_HOST_WEIGHT|Taking over ```domain.com/.well-known/acme...``` queries. You need to set a value that is higher than the one of the "catch all" service|```1```
 |EXCLUDE_PORTS|Don't route traffic to port 443|```443```
 
 Usually you would want the newly generated certificates to be stored in the hosts file system
