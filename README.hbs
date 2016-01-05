@@ -26,10 +26,17 @@ should work fine in other setups too.
 As this is a docker container, all configuration is done by setting appropriate environment variables.
 These are as follows:
 
+#### General environment variables
+
 |Variable|Explanation|Example value|
 | --- | --- | --- | --- |
 |CERT_DOMAINS|Domains the certificate should be issued for, comma separated | ```example.com,app.example.com```|
 |CERT_EMAIL|Email for notifications (like imminent certificate expiry)|```admin@example.com```|
+|CERT_SERVICE_PRIVATE|Flag to run private part of app (certificate hosting)|```true```|
+|CERT_SERVICE_PASSWORD|Pass to authenticate against private certificate service|```SomeGoodPassword```|
+|CERT_SERVICE_Username|Username to authenticate against private certificate service|```michael```|
+
+#### Tutum HAProxy specific
 |VIRTUAL_HOST|optional for Tutum + HAProxy setup (telling the loadbalancer to route traffic to this service)|```*.acme.invalid,*/.well-known/*```
 
 Usually you would want the newly generated certificates to be stored in the hosts file system
