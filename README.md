@@ -8,7 +8,6 @@ Bugs go to issues please.
 
 A service to automatically create and renew letsencrypt certificates.
 
-
 ### API Reference
 <a name="module_letsencrypt-cert-service"></a>
 ## letsencrypt-cert-service
