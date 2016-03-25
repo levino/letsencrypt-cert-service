@@ -11,6 +11,7 @@ A service to automatically create and renew letsencrypt certificates.
 
 ### API Reference
 <a name="module_letsencrypt-cert-service"></a>
+
 ## letsencrypt-cert-service
 **Example**  
 ```js
@@ -24,9 +25,11 @@ certService.start(callback);
         * [new LetsEncryptCertService(config)](#new_module_letsencrypt-cert-service..LetsEncryptCertService_new)
 
 <a name="module_letsencrypt-cert-service..LetsEncryptCertService"></a>
+
 ### letsencrypt-cert-service~LetsEncryptCertService
 **Kind**: inner class of <code>[letsencrypt-cert-service](#module_letsencrypt-cert-service)</code>  
 <a name="new_module_letsencrypt-cert-service..LetsEncryptCertService_new"></a>
+
 #### new LetsEncryptCertService(config)
 
 | Param | Type | Description |
@@ -129,6 +132,6 @@ Important:
 After deploying the service make sure you get an answer from this service when you go to
 http://[subdomain.]domain.com/.well-known/check ("Letsencrypt cert service reporting in! Load balancing seems to work.")
 
-## Copyright
+## License
 
-Levin Keller
+Released under the Unlicense. See the [Unlicense](UNLICENSE)
