@@ -132,6 +132,11 @@ Important:
 After deploying the service make sure you get an answer from this service when you go to
 http://[subdomain.]domain.com/.well-known/check ("Letsencrypt cert service reporting in! Load balancing seems to work.")
 
+## Contribution
+
+Before you open a pull request, please acknowledge the [Unlicense](UNLICENSE). You have to sign a CLA before I can merge any PRs. For further details see
+the [contribution guidelines](CONTRIBUTION.md).
+
 ## License
 
 Released under the Unlicense. See the [Unlicense](UNLICENSE)
