@@ -18,7 +18,7 @@
     "certificates"
   ],
   "author": "Levin Keller",
-  "license": "MIT",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/Levino/letsencrypt-cert-service/issues"
   },
