@@ -54,7 +54,7 @@ It can be run on the server that the A record of the domain points to, but the m
 with loadbalancers and in this scenario be deployed on any node behind the loadbalancer without
 interrupting the live deployment.
 
-This service has been tested in a deployment orchestrated with [Tutum](https://tutum.co) and their haproxy [image](https://github.com/tutumcloud/haproxy) but
+This service has been tested in a deployment orchestrated with [Docker Cloud](https://cloud.docker.com/) and their haproxy [image](https://github.com/tutumcloud/haproxy) but
 should work fine in other setups too.
 
 ### Container configuration
