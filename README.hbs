@@ -37,22 +37,17 @@ To provide a solution to the above problem, we suggest this service.
 load balancers that check whether the service is "alive" before routing traffic to it).
 - One can securely connect to the service at any time and create or renew certificates with a simple command.
 
-### Troubleshooting
-
-After deploying the service make sure you get an answer from this service when you go to
-http://[subdomain.]example.org/.well-known/check ("Letsencrypt cert service reporting in! Load balancing seems to work.")
-
-#### Setup and certificate creation
+### Setup and certificate creation
 
 I made a [stackfile](stackfile.yml) to get you going.
 
-Assumptions:
+#### Assumptions
 
 - You have exactly one node "loadbalancer" in docker cloud that has the tag "loadbalancer". You can change "loadbalancer" to whatever floats your boat, it just needs to match the "tag" in the stackfile.
 - You want to issue certs for ```example.org``` and have ```certs.example.org``` and ```example.org``` properly registered and
 the DNS entries resolve to the node with the tag "loadbalancer"<sup>[1](#myfootnote1)</sup>.
 
-Steps:
+#### Steps
 
 1. Copy the stackfile and change the content (like domain names, passwords and such).
 2. Deploy the stackfile to docker cloud. Wait for the services to start.
@@ -68,14 +63,14 @@ Steps:
 8. Change the stackfile and put the certificate in the environment of the lb to enable encryption. See [here](https://github.com/docker/dockercloud-haproxy#ssl-termination)
 9. Check that ```https://example.org``` gives you correctly encrypted responses.
 
-Remarks:
+#### Remarks
 
 <a name="myfootnote1"><sup>1</sup></a>: Two ways to achieve this. For ```example.org``` (root domain) you need an A-Record with the ip address of the node. Do not set a CNAME for the root domain, you will break stuff, for example MX records.
 For ```certs.example.org``` you can either put an A record with the ip address or you create a CNAME for ```certs``` and point it to the endpoint of the loadbalancer which will be something like ```lb.stackname.hashystring.dockercloud.com```
 
 <a name="myfootnote2"><sup>2</sup></a>: There are no checks on rate limit and so on. Please do not hit ```/makecert``` too often.
 
-#### Certificat renewal
+### Certificat renewal
 
 With private service enabled and certificates in place you can hit ```https://certs.example.org/makecert``` to renew certs. On success you can retrieve the new extended certificate as above.
 
