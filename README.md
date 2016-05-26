@@ -68,6 +68,7 @@ Assumptions:
 the DNS entries resolve to the node with the tag "loadbalancer"<sup>[1](#myfootnote1)</sup>.
 
 Steps:
+
 1. Copy the stackfile and change the content (like domain names, passwords and such).
 2. Deploy the stackfile to docker cloud. Wait for the services to start.
 3. Check whether ```http://example.org/.well-known/check``` shows the correct success message ("Letsencrypt cert service reporting in! Load balancing seems to work.")
