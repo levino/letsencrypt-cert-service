@@ -70,7 +70,7 @@ Steps:
 
 Remarks:
 
-<a name="myfootnote1"><sup>1</sup></a>: Two ways to achieve this. For ```example.org``` (root domain) you need an A-Record the ip address of the node. Do not set a CNAME for the root domain, you will break stuff, for example MX records.
+<a name="myfootnote1"><sup>1</sup></a>: Two ways to achieve this. For ```example.org``` (root domain) you need an A-Record with the ip address of the node. Do not set a CNAME for the root domain, you will break stuff, for example MX records.
 For ```certs.example.org``` you can either put an A record with the ip address or you create a CNAME for ```certs``` and point it to the endpoint of the loadbalancer which will be something like ```lb.stackname.hashystring.dockercloud.com```
 
 <a name="myfootnote2"><sup>2</sup></a>: There are no checks on rate limit and so on. Please do not hit ```/makecert``` too often.
