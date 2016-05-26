@@ -59,6 +59,8 @@ should work fine in other setups too.
 
 ### Container configuration
 
+[Quick start stackfile](stackfile.yml)
+
 As this is a docker container, all configuration is done by setting appropriate environment variables.
 These are as follows:
 
