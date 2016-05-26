@@ -39,7 +39,7 @@ load balancers that check whether the service is "alive" before routing traffic 
 
 ### Setup and certificate creation
 
-I made a [stackfile](stackfile.yml) to get you going.
+I made a [stackfile](tutum.yml) to get you going.
 
 #### Assumptions
 
