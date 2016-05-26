@@ -77,7 +77,7 @@ For ```certs.example.org``` you can either put an A record with the ip address o
 
 #### Certificat renewal
 
-- With private service enabled and certificates in place you can hit ```https://certs.example.org/makecert``` to renew certs. On success you can retrieve the new extended certificate as above.
+With private service enabled and certificates in place you can hit ```https://certs.example.org/makecert``` to renew certs. On success you can retrieve the new extended certificate as above.
 
 ### Container configuration
 
