@@ -32,10 +32,10 @@ again. It goes without saying that this cannot be a "workflow".
 
 To provide a solution to the above problem, we suggest this service.
 
-- It can be run additionally as an additional service in any load balanced setup.
+- It can be run as an additional service in any load balanced setup.
 - It can run forever and permanently runs a http server on port 80 (important for
 load balancers that check whether the service is "alive" before routing traffic to it).
-- One can connect to the service at any time and create or renew certificates with a simple command.
+- One can securely connect to the service at any time and create or renew certificates with a simple command.
 
 ### Troubleshooting
 
