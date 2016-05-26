@@ -1,0 +1,32 @@
+lb:
+  image: dockercloud/haproxy
+  links:
+    - web
+    - letsencrypt-cert-service
+  ports:
+    - 80:80
+    - 443:443
+  roles:
+    - global
+  tags:
+    - loadbalancer
+web:
+  image: dockercloud/hello-world
+  target_num_containers: 4
+  environment:
+    - VIRTUAL_HOST=https://example.com,http://example.com
+letsencrypt-cert-service:
+  image: levino/letsencrypt-cert-service
+  environment:
+    - VIRTUALHOST=*.acme.invalid,*/.well-known/*,certs.example.com
+    - EXCLUDE_PORTS=443
+    - CERT_DOMAINS=example.com,certs.example.com
+    - CERT_EMAIL=admin@example.com
+    - CERT_SERVICE_PRIVATE=true
+    - CERT_SERVICE_PASSWORD=password
+    - CERT_SERVICE_USERNAME=user
+    - VIRTUAL_HOST_WEIGHT=5
+  ports:
+    - 8443:443
+  tags:
+    - loadbalancer
