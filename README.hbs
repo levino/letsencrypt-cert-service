@@ -61,9 +61,10 @@ Steps:
 4. Check whether ```http://certs.example.org/status``` shows success message
 5. Open ```http://certs.example.com/makecert```<sup>[2](#myfootnote2)</sup>(wait a little, if you get an error, check the server logs to debug or open an issue [here](https://github.com/Levino/letsencrypt-cert-service/issues)).
 6. On success go to ```https://certs.example.org:8443/status``` and authenticate (Please check that it is properly encrypted traffic!)
-7. a) Get your certificate from ```https://certs.example.com:8443/certs/example.org/cert.pem```
-   b) Get your private key from ```https://certs.example.com:8443/certs/example.org/privkey.pem```
-   c) Get you Docker Cloud Haproxy certificate string from ```https://certs.example.com:8443/certs/example.org/bundle.pem?haproxy=true``` (:D)
+7. Then do one of these:
+  a) Get your certificate from ```https://certs.example.com:8443/certs/example.org/cert.pem```
+  b) Get your private key from ```https://certs.example.com:8443/certs/example.org/privkey.pem```
+  c) Get you Docker Cloud Haproxy certificate string from ```https://certs.example.com:8443/certs/example.org/bundle.pem?haproxy=true``` (:D)
 8. Change the stackfile and put the certificate in the environment of the lb to enable encryption. See [here](https://github.com/docker/dockercloud-haproxy#ssl-termination)
 9. Check that ```https://example.org``` gives you correctly encrypted responses.
 
