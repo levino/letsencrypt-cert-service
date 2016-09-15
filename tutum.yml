@@ -18,7 +18,7 @@ web:
 letsencrypt-cert-service:
   image: levino/letsencrypt-cert-service
   environment:
-    - VIRTUALHOST=*.acme.invalid,*/.well-known/*,certs.example.com
+    - VIRTUAL_HOST=*.acme.invalid,*/.well-known/*,certs.example.com
     - EXCLUDE_PORTS=443
     - CERT_DOMAINS=example.com,certs.example.com
     - CERT_EMAIL=admin@example.com
