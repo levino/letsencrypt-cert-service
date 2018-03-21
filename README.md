@@ -1,3 +1,8 @@
+# DEPRECATED! #
+
+This was useful for some time but I now use docker swarm with traefik for loadbalancing which has support for letsencrypt baked in. I suggest you start using this today too.
+
+
 ## Communication
 
 I opened a Gitter room
